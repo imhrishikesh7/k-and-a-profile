@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Transducer';
+  src: url('/transducer-font-family/TransducerTest-Regular-BF645c3dd843c3b.otf') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Transducer-bold';
+  src: url('/transducer-font-family/TransducerTest-Bold-BF645c3dd70a4f5.otf') format('opentype');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Transducer-ExtendedBold';
+  src: url('/transducer-font-family/TransducerTest-ExtendedBold-BF645c3dd848b2a.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+.font-exb {
+  font-family: 'Transducer-bold', sans-serif;
+}
+body {
+  background: #33333d;
+  font-family: 'Transducer', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+.marginal{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.fs{
+  max-width: 100vw;
+  /* height: 100vh */
+}

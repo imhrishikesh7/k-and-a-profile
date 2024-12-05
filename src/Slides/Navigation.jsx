@@ -11,7 +11,7 @@ const Navigation = ({ theme, page }) => {
         )}
       </div>
       <div className="ml-4 h-full ">
-        <p className={`text-[0.8rem] ${theme === 'white' ? 'text-white' : 'text-black'}`}>
+        <p className={`text-[0.8rem] pb-1 ${theme === 'white' ? 'text-white' : 'text-black'}`}>
           {page}
         </p>
       </div>

@@ -35,7 +35,7 @@ function Slide16() {
       >
         <motion.div className="w-[21%] h-[70%] relative" variants={itemVariants}>
           <img src="/images/16-1c.webp" alt="" />
-          <p className="text-gray-400 text-lg absolute -bottom-[10%]">Market capitalisation as on 15th July, 2024</p>
+          <p className="text-gray-400 text-lg absolute -bottom-[10%]">Market capitalisation <br /> as on 15th July, 2024</p>
         </motion.div>
         <motion.div className="w-[21%] h-[70%]" variants={itemVariants}>
           <img src="/images/16-2c.webp" alt="" />

@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, Suspense, lazy } from "react";
 import { preloadImages } from './utils/imagePreloader';
-
+import SlideArrow from "./Slides/SlideArrow";
 // Lazy load all slides
 const Slide1 = lazy(() => import('./Slides/Slide1'));
 const Slide2 = lazy(() => import('./Slides/Slide2'));
@@ -104,10 +104,10 @@ const preloadNextSlide = (currentSlide) => {
 function SlideNavigation() {
   const navigate = useNavigate();
   const location = useLocation();
+  const currentIndex = slides.findIndex((slide) => slide.path === location.pathname);
 
   useEffect(() => {
     const handleKeyPress = (event) => {
-      const currentIndex = slides.findIndex((slide) => slide.path === location.pathname);
 
       if (event.key === "ArrowRight" && currentIndex < slides.length - 1) {
         navigate(slides[currentIndex + 1].path);
@@ -123,7 +123,10 @@ function SlideNavigation() {
     };
   }, [location, navigate]);
 
+  
+
   return (
+    <div className="relative">
     <Routes>
       {slides.map(({ id, path, component: Component }) => (
         <Route
@@ -133,6 +136,21 @@ function SlideNavigation() {
         />
       ))}
     </Routes>
+
+    {/* Add SlideArrow components */}
+    <SlideArrow
+      direction="prev"
+      navigate={navigate}
+      currentSlide={currentIndex}
+      totalSlides={slides.length}
+    />
+    <SlideArrow
+      direction="next"
+      navigate={navigate}
+      currentSlide={currentIndex}
+      totalSlides={slides.length}
+    />
+  </div>
   );
 }
 
